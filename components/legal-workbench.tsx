@@ -341,7 +341,7 @@ function StatusCard({
       ) : null}
       <div className="mt-6 grid gap-3 text-sm text-white/68">
         <div>1. 提取合同内容并做结构整理</div>
-        <div>2. 调用 GLM-4 生成律师风格结果</div>
+        <div>2. 调用 DeepSeek 生成律师风格结果</div>
         <div>3. 产出可下载的 Word 文件</div>
       </div>
     </div>
