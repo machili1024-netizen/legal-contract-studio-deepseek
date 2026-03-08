@@ -32,7 +32,7 @@ export async function POST(request: Request) {
 
       const output = await draftContract(payload, referenceText);
 
-      return new NextResponse(output.buffer, {
+      return new NextResponse(new Uint8Array(output.buffer), {
         status: 200,
         headers: {
           "Content-Type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
@@ -45,7 +45,7 @@ export async function POST(request: Request) {
     const payload = draftRequestSchema.parse(json);
     const output = await draftContract(payload);
 
-    return new NextResponse(output.buffer, {
+    return new NextResponse(new Uint8Array(output.buffer), {
       status: 200,
       headers: {
         "Content-Type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",

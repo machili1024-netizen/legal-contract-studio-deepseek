@@ -28,7 +28,7 @@ export async function POST(request: Request) {
     const text = await extractTextFromDocument(file.name, buffer);
     const output = await reviewContract(payload, text, file.name);
 
-    return new NextResponse(output.buffer, {
+    return new NextResponse(new Uint8Array(output.buffer), {
       status: 200,
       headers: {
         "Content-Type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
